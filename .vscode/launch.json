@@ -5,12 +5,29 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "attachlisp",
-            "request": "attach",
-            "name": "AutoLISP Debug: Attach",
-            "attributes": {
-                "//": "This configuration has been deprecated. Instead use the Debug: Attach Process setting of the AutoCAD AutoLISP Extension."
-            }
-        }
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/server.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        
+        {
+            "command": "npm start",
+            "name": "Run npm start",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}/public"
+        },
+
     ]
 }
