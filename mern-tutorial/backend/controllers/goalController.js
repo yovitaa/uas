@@ -1,4 +1,8 @@
 const getGoals = (req,res) => {
+    if(!req.body.text){
+        res.status(400).json({message: 'jika body data tidak ditemukan parameter text, maka akan return status 400 dan ada pesan untuk menambah parameter text'})
+    }        
+
     res.status(200).json({message: 'Get Goals'})
 }
 
