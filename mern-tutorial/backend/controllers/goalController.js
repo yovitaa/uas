@@ -1,3 +1,6 @@
+
+const Goal = require('../models/goalModels')
+
 const getGoals = asyncHandler (async(req,res) => {
     if(!req.body.text){
         throw new Error('jika body data tidak ditemukan parameter text, maka akan return status 400 dan ada pesan untuk menambah parameter text')
